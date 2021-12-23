@@ -32,20 +32,29 @@ export default function NavBar() {
         icon={<HomeIcon />}
       />
       </Link>
+
+      <Link to="/start">
       <BottomNavigationAction
         label="Play"
         value="play"
         icon={<PlayCircleFilledWhiteIcon />}
       />
+      </Link>
+
+      <Link to="/courses">
       <BottomNavigationAction
         label="Courses"
         value="courses"
         icon={<LocationOnIcon />}
       />
+      </Link>
+
+      <Link to="/bags">
       <BottomNavigationAction 
         label="Bags" 
         value="bags" 
         icon={<BackpackIcon />} />
+      </Link>
     </StyledBottomNav>
   );
 }
