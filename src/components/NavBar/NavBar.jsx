@@ -3,6 +3,8 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { Link } from 'react-router-dom';
 
+import './NavBar.css';
+
 import HomeIcon from '@mui/icons-material/Home';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -30,6 +32,7 @@ export default function NavBar() {
         label="Home"
         value="home"
         icon={<HomeIcon />}
+        className="icons"
       />
       </Link>
 
@@ -38,6 +41,7 @@ export default function NavBar() {
         label="Play"
         value="play"
         icon={<PlayCircleFilledWhiteIcon />}
+        className="icons"
       />
       </Link>
 
@@ -46,6 +50,7 @@ export default function NavBar() {
         label="Courses"
         value="courses"
         icon={<LocationOnIcon />}
+        className="icons"
       />
       </Link>
 
@@ -53,7 +58,9 @@ export default function NavBar() {
       <BottomNavigationAction 
         label="Bags" 
         value="bags" 
-        icon={<BackpackIcon />} />
+        icon={<BackpackIcon />}
+        className="icons" 
+      />
       </Link>
     </StyledBottomNav>
   );

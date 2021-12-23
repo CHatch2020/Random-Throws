@@ -1,0 +1,15 @@
+.body {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 590px;
+}
+
+.intro {
+    text-align: center;
+}
+

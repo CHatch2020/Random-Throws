@@ -11,7 +11,7 @@ function Header() {
       <h2 className="header-title">Random Throws</h2>
       {user.id && (
         <>
-          <LogOutButton className="navLink" />
+          <LogOutButton className="logout" />
         </>
       )}
     </div>
