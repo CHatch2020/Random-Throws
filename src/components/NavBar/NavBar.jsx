@@ -1,6 +1,7 @@
 import * as React from 'react';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import { Link } from 'react-router-dom';
 
 import HomeIcon from '@mui/icons-material/Home';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
@@ -24,11 +25,13 @@ export default function NavBar() {
 
   return (
     <StyledBottomNav sx={{ width: 400 }} value={value} onChange={handleChange}>
+      <Link to="/home">
       <BottomNavigationAction
         label="Home"
         value="home"
         icon={<HomeIcon />}
       />
+      </Link>
       <BottomNavigationAction
         label="Play"
         value="play"

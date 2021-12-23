@@ -9,13 +9,12 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -34,19 +33,19 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Header />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from="/" to="/home" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
-          <Route
+          {/* <Route
             // shows AboutPage at all times (logged in or not)
             exact
-            path="/about"
+            path="/bags"
           >
-            <AboutPage />
-          </Route>
+            
+          </Route> */}
 
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -60,13 +59,13 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
+          {/* <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/courses"
           >
-            <InfoPage />
-          </ProtectedRoute>
+            
+          </ProtectedRoute> */}
 
           <Route
             exact
