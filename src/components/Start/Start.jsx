@@ -1,8 +1,10 @@
 
 
+import './Start.css';
+
 function Start () {
     return (
-        <div>
+        <div className="body">
             <p>Start</p>
         </div>
     )

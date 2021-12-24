@@ -1,0 +1,41 @@
+.courses {
+    background-color: white;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 350px;
+}
+
+.sub {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.name {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.holes {
+    margin: 0;
+    margin-left: 25px;
+}
+
+.par {
+    margin-left: 25px;
+}
+
+.button {
+    align-self: center;
+    margin-right: 15px;
+    height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
