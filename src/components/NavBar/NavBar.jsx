@@ -12,6 +12,7 @@ import BackpackIcon from '@mui/icons-material/Backpack';
 
 import { styled } from '@mui/material/styles';
 
+// quick style for the navBar
 const StyledBottomNav = styled(BottomNavigation)`
     position: absolute;
     bottom: 0;
@@ -27,7 +28,9 @@ export default function NavBar() {
 
   return (
     <StyledBottomNav sx={{ width: 400 }} value={value} onChange={handleChange}>
+      {/* link all of these buttons to their routes */}
       <Link to="/home">
+        {/* Home nav button */}
       <BottomNavigationAction
         label="Home"
         value="home"
@@ -37,6 +40,7 @@ export default function NavBar() {
       </Link>
 
       <Link to="/start">
+        {/* Play nav button */}
       <BottomNavigationAction
         label="Play"
         value="play"
@@ -46,6 +50,7 @@ export default function NavBar() {
       </Link>
 
       <Link to="/courses">
+        {/* Courses nav button */}
       <BottomNavigationAction
         label="Courses"
         value="courses"
@@ -55,6 +60,7 @@ export default function NavBar() {
       </Link>
 
       <Link to="/bags">
+        {/* Bags nav button */}
       <BottomNavigationAction 
         label="Bags" 
         value="bags" 
