@@ -14,7 +14,7 @@ import { styled } from '@mui/material/styles';
 
 // quick style for the navBar
 const StyledBottomNav = styled(BottomNavigation)`
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: rgb(8, 162, 251);
 `;

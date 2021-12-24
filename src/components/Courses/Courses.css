@@ -1,5 +1,6 @@
 .courses {
     background-color: white;
+    box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
 }
 
 .course-main {
@@ -21,6 +22,8 @@
     padding: 20px;
     padding-left: 50px;
     padding-right: 50px;
+    border: 3px solid rgb(180, 180, 180);
+    box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.322) inset;
 }
 
 .course-holes {
@@ -38,4 +41,8 @@
     height: 30px;
     padding-left: 30px;
     padding-right: 30px;
+    box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
+    border: 3px solid rgb(8, 162, 251);
+    background-color: black;
+    color: white;
 }
