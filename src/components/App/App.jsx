@@ -17,6 +17,7 @@ import UserPage from "../UserPage/UserPage";
 import Start from "../Start/Start";
 import Courses from "../Courses/Courses";
 import Bags from "../Bags/Bags";
+import Disc from "../Disc/Disc";
 
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
@@ -67,6 +68,14 @@ function App() {
             path="/bags"
           >
             <Bags />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Discs Page else shows LoginPage
+            exact
+            path="/discs"
+          >
+            <Disc />
           </ProtectedRoute>
 
           <ProtectedRoute 

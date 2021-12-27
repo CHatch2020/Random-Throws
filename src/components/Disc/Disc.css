@@ -1,0 +1,47 @@
+.back {
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 600px;
+    padding-top: 10px;
+}
+
+.disc-main {
+    background-color: black;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.disc-name {
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+
+.disc-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.disc-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.flight-numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 60px;
+    width: 140px;
+    column-gap: 10px;
+}
