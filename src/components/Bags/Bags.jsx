@@ -13,7 +13,7 @@ function Bags() {
 
   return (
     <div>
-      <div className = "bags">
+      <div className="bags">
         {bags.map((bag) => {
           return <BagsItem key={bag.id} bagItem={bag} />;
         })}

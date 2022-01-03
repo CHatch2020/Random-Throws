@@ -1,26 +1,29 @@
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import DiscItem from "../DiscItem/DiscItem";
+
 import "./Disc.css";
 
 function Disc() {
+  const dispatch = useDispatch();
+  const discs = useSelector((store) => store.discs);
+
+  useEffect(() => {
+    dispatch({ type: "FETCH_DISCS" });
+  }, []);
+
   return (
-    <div className="back">
-      <div className="disc-main">
-        <div className="disc-name">Name</div>
-        <div className="disc-top">
-          <div className="disc-image">Image</div>
-          <div>
-            Flight Numbers
-            <div className="flight-numbers">
-              <div>Speed: Glide:</div>
-              <div>Turn: Fade:</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-          <div>Stability</div>
+    <div>
+      <div className="back">
+        {discs.map((disc) => {
+          return <DiscItem key={disc.id} discItem={disc} />;
+        })}
+      </div>
+
+      <div>
+        <div className="bags-button">
+          <button className="bags-add">Add</button>
         </div>
       </div>
     </div>

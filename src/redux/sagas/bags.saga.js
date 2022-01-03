@@ -17,10 +17,10 @@ function* fetchBags() {
         console.log('Error in bags Saga', err);
         
     }
-}
+};
 
 function* bagsSaga() {
     yield takeEvery('FETCH_BAGS', fetchBags);
-}
+};
 
 export default bagsSaga;
