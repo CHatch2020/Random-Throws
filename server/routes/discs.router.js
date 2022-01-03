@@ -7,14 +7,16 @@ const router = express.Router();
 
 router.get("/", rejectUnauthenticated, (req, res) => {
   const sqlText = `
-    SELECT * FROM "discs"
+  SELECT * FROM "discs"
 JOIN "bags_discs"
 ON "discs"."id"="bags_discs"."disc_id"
 JOIN "bags"
 ON "bags_discs"."bag_id"="bags"."id"
-WHERE "user_id" = $1;
+WHERE "bag_id" = $1;
     `;
-  const sqlValues = [req.user.id];
+    console.log(req.body.bag_id);
+    
+  const sqlValues = [req.body];
   console.log(sqlValues);
   pool
     .query(sqlText, sqlValues)

@@ -9,7 +9,9 @@ function DiscItem({discItem}) {
               <div className="disc-main">
                 <div className="disc-name">{discItem.disc_name}</div>
                 <div className="disc-top">
-                  <div className="disc-image">{discItem.image}</div>
+                  <div className="disc-image">
+                      <img src={discItem.image} alt={discItem.disc_name}/>
+                  </div>
                   <div>
                     Flight Numbers
                     <div className="flight-numbers">
