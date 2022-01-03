@@ -1,31 +1,28 @@
-import "./Bags.css";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import BagsItem from "../BagsItem/BagsItem";
+
 function Bags() {
+  const dispatch = useDispatch();
+  const bags = useSelector((store) => store.bags);
+
+  useEffect(() => {
+    dispatch({ type: "FETCH_BAGS" });
+  }, []);
+
   return (
     <div>
-      <div className="bags">
-
-        <div className="bags-outside">
-          <div className="bags-inside">
-            <p>bag 1</p>
-          </div>
-        </div>
-
-        <div className="bags-outside">
-          <div className="bags-inside">
-            <p>bag 2</p>
-          </div>
-        </div>
-
-        <div className="bags-outside">
-          <div className="bags-inside">
-            <p>bag 3</p>
-          </div>
-        </div>
-
+      <div className = "bags">
+        {bags.map((bag) => {
+          return <BagsItem key={bag.id} bagItem={bag} />;
+        })}
       </div>
 
-      <div className="bags-button">
-        <button className="bags-add">Add</button>
+      <div>
+        <div className="bags-button">
+          <button className="bags-add">Add</button>
+        </div>
       </div>
     </div>
   );
