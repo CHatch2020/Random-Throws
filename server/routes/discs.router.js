@@ -7,8 +7,12 @@ const router = express.Router();
 
 router.get("/", rejectUnauthenticated, (req, res) => {
   const sqlText = `
-    SELECT * FROM "bags"
-    WHERE "user_id" = $1;
+    SELECT * FROM "discs"
+JOIN "bags_discs"
+ON "discs"."id"="bags_discs"."disc_id"
+JOIN "bags"
+ON "bags_discs"."bag_id"="bags"."id"
+WHERE "user_id" = $1;
     `;
   const sqlValues = [req.user.id];
   console.log(sqlValues);
