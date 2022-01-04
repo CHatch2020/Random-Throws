@@ -12,16 +12,18 @@ JOIN "bags_discs"
 ON "discs"."id"="bags_discs"."disc_id"
 JOIN "bags"
 ON "bags_discs"."bag_id"="bags"."id"
-WHERE "bag_id" = $1;
+WHERE "user_id" = $1;
     `;
-    console.log(req.body.bag_id);
+    // console.log(req.body);
     
-  const sqlValues = [req.body];
-  console.log(sqlValues);
+  const sqlValues = [req.user.id];
+  // console.log(sqlValues);
   pool
     .query(sqlText, sqlValues)
     .then((dbRes) => {
-      console.log(dbRes.rows);
+      // console.log(dbRes.rows);
+      // console.log("This is the bag id", req.body.bag_id);
+      console.log("Is this undefined?", req);
       res.send(dbRes.rows);
     })
     .catch((dbErr) => {

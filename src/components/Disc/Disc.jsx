@@ -2,16 +2,19 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import DiscItem from "../DiscItem/DiscItem";
+import { useParams } from "react-router-dom";
 
 import "./Disc.css";
 
 function Disc() {
   const dispatch = useDispatch();
   const discs = useSelector((store) => store.discs);
+  const params = useParams();
 
   useEffect(() => {
-    dispatch({ type: "FETCH_DISCS" });
-  }, []);
+    console.log('params', params);
+    dispatch({ type: "FETCH_DISCS", payload: params.id });
+  }, [params.id]);
 
   return (
     <div>

@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import bags from './bags.reducer';
 import discs from './discs.reducer';
+import courses from './courses.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   bags, // to grab all of the bags they created from db
   discs, // grabs all the discs for specified bag
+  courses,
 });
 
 export default rootReducer;

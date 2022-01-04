@@ -73,7 +73,7 @@ function App() {
           <ProtectedRoute
             // logged in shows Discs Page else shows LoginPage
             exact
-            path="/discs"
+            path="/bags/:id"
           >
             <Disc />
           </ProtectedRoute>

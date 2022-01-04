@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-function* fetchDiscs() {
+function* fetchDiscs(action) {
     try {
         const response = yield axios({
             method: 'GET',
-            url: '/api/discs'
+            url: `/api/bags/${action.payload}`
         })
         yield put({
             type: 'SET_DISCS',
