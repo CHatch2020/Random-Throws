@@ -18,6 +18,7 @@ import Start from "../Start/Start";
 import Courses from "../Courses/Courses";
 import Bags from "../Bags/Bags";
 import Disc from "../Disc/Disc";
+import Holes from "../Holes/Holes";
 
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
@@ -84,6 +85,14 @@ function App() {
             path="/start"
           >
             <Start />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows Discs Page else shows LoginPage
+            exact
+            path="/start/:course_id/holes/:hole_number"
+          >
+            <Holes />
           </ProtectedRoute>
 
           <Route exact path="/login">

@@ -5,6 +5,7 @@ import bags from './bags.reducer';
 import discs from './discs.reducer';
 import courses from './courses.reducer';
 import selectedCourses from './selectedCourses.reducer';
+import holes from './holes.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   discs, // grabs all the discs for specified bag
   courses,
   selectedCourses,
+  holes,
 });
 
 export default rootReducer;

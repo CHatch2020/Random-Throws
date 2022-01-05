@@ -1,6 +1,17 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 function StartItem({courseItem}) {
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+
+    const toHoles = (courseItem) => {
+        dispatch({ type: 'FETCH_HOLES', payload: courseItem.id})
+        history.push(`/start/${courseItem.id}/holes/1`);
+    };
+
     return (
         <div>
             <div className="start-main">
@@ -11,7 +22,7 @@ function StartItem({courseItem}) {
                 </div>
             </div>
             <div className="button-body">
-                <button className="start-button">Play</button>
+                <button className="start-button" onClick={() => toHoles(courseItem)}>Play</button>
             </div>
         </div>
     )

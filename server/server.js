@@ -13,6 +13,7 @@ const bagsRouter = require('./routes/bags.router');
 const discRouter = require('./routes/discs.router');
 const courseRouter = require('./routes/courses.router');
 const selectedCourseRouter = require('./routes/selectedCourses.router');
+const holesRouter = require('./routes/holes.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.use('/api/bags', bagsRouter);
 app.use('/api/discs', discRouter);
 app.use('/api/courses', courseRouter);
 app.use('/api/selected_courses', selectedCourseRouter);
+app.use('/api/holes', holesRouter);
 
 // Serve static files
 app.use(express.static('build'));
