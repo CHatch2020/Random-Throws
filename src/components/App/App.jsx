@@ -90,7 +90,7 @@ function App() {
           <ProtectedRoute
             // logged in shows Discs Page else shows LoginPage
             exact
-            path="/start/:course_id/holes/:hole_number"
+            path="/start/:course_id/bags/:bag_id/holes/:hole_number"
           >
             <Holes />
           </ProtectedRoute>

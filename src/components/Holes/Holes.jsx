@@ -7,12 +7,21 @@ import { useHistory } from 'react-router-dom';
 function Holes () {
     const dispatch = useDispatch();
     const params = useParams();
-    const holes = useSelector(store => store.holes);
-    const currentHole = params.hole_number;
     const history = useHistory();
 
+    const discs = useSelector((store) => store.discs);
+    const holes = useSelector(store => store.holes);
+    const currentHole = params.hole_number;
+    // const randomDisc = discs[Math.floor(Math.random()*discs.length)];
+    console.log("The discs object", discs.length);
+    // console.log("The random disc", randomDisc);
+
+    useEffect(() => {
+        dispatch({ type: 'FETCH_DISCS', payload: params.bag_id})
+    }, [params.bag_id]);
+
     const goToNext = () => {
-        history.push(`/start/${params.course_id}/holes/${Number(currentHole) + 1}`);
+        history.push(`/start/${params.course_id}/bags/${params.bag_id}/holes/${Number(currentHole) + 1}`);
     }
 
     return (
