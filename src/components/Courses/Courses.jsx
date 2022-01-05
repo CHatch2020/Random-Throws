@@ -1,28 +1,24 @@
-import "./Courses.css";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
+import "./Courses.css";
+import CourseItem from "../CourseItem/CourseItem";
 
 function Courses() {
-  return (
-    // bring to course Item for functionality - along with the styling
-    <div>
-      {/* break off the course to be styled alone */}
-      <div className="courses">
-        {/* break off again to align these components together */}
-        <div className="course-main">
-          <h3 className="course-name">Name</h3>
-          <h4 className="course-desc">Description:</h4>
-        </div>
+  const dispatch = useDispatch();
+  const courses = useSelector(store => store.courses);
 
-        {/* Leave this one out */}
-        <h4 className="course-holes">Holes:</h4>
-        {/* break off to align together */}
-        <div className="course-sub">
-          <h4 className="course-par">Par:</h4>
-          <button className="course-button">Add</button>
-        </div>
-      </div>
+  useEffect(() => {
+    dispatch({ type: 'FETCH_COURSES'});
+  }, [])
+  return (
+    <div>
+      {courses.map((course) => {
+        return <CourseItem key={course.id} courseItem={course}/>
+      })}
     </div>
-  );
+  )
 }
 
 export default Courses;

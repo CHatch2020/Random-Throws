@@ -1,23 +1,24 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-function* fetchDiscs(action) {
+function* fetchHoles(action) {
     try {
         const response = yield axios({
             method: 'GET',
-            url: `/api/bags/${action.payload}`
+            url: `/api/holes/${action.payload}`
         })
         yield put({
-            type: 'SET_DISCS',
+            type: 'SET_HOLES',
             payload: response.data
         })
     } catch(err) {
-        console.log('Error in Discs Saga', err);
+        console.log('Error in holes Saga', err);
+        
     }
 };
 
-function* discSaga() {
-    yield takeEvery('FETCH_DISCS', fetchDiscs);
+function* holesSaga() {
+    yield takeEvery('FETCH_HOLES', fetchHoles);
 };
 
-export default discSaga;
+export default holesSaga;
