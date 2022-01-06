@@ -12,9 +12,9 @@ function Holes () {
     const discs = useSelector((store) => store.discs);
     const holes = useSelector(store => store.holes);
     const currentHole = params.hole_number;
-    // const randomDisc = discs[Math.floor(Math.random()*discs.length)];
+    const randomDisc = discs.sort(() => .5 - Math.random()).slice(0,3);
     console.log("The discs object", discs.length);
-    // console.log("The random disc", randomDisc);
+    console.log("The random disc", randomDisc);
 
     useEffect(() => {
         dispatch({ type: 'FETCH_DISCS', payload: params.bag_id})
@@ -22,6 +22,7 @@ function Holes () {
 
     const goToNext = () => {
         history.push(`/start/${params.course_id}/bags/${params.bag_id}/holes/${Number(currentHole) + 1}`);
+        randomDisc;
     }
 
     return (
