@@ -21,11 +21,11 @@ function Holes () {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_DISCS', payload: params.bag_id});
-        dispatch({ type: 'SEND_SCORE', payload: score, currentHole, currentCourse})
     }, [params.bag_id]);
 
     const goToNext = () => {
         history.push(`/start/${currentCourse}/bags/${params.bag_id}/holes/${Number(currentHole) + 1}`);
+        dispatch({ type: 'SEND_SCORE', payload: {score, currentHole, currentCourse}})
         randomDisc;
     }
 

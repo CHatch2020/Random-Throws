@@ -3,10 +3,12 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 function* sendScore(action) {
     try {
+        console.log(action);
+        
         yield axios({
             method: 'POST',
             url: `/api/score/${action.payload.currentCourse}/${action.payload.currentHole}`,
-            payload: action.payload.score
+            data: {score: action.payload.score}
         })
     } catch(err) {
         console.log('Error in sendScore Saga', err);
