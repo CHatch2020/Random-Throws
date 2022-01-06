@@ -30,6 +30,9 @@ function Holes () {
             <p>Hole: {currentHole}</p>
             <p>Par: {holes.length && holes[currentHole - 1].par}</p>
             <p>Distance: {holes.length && holes[currentHole - 1].distance}</p>
+            {randomDisc.map((disc) => {
+                return <h4>{disc.disc_name}</h4>
+            })};
             <input placeholder="Score"/>
             <button onClick={() => goToNext()}>Next</button>
         </div>
