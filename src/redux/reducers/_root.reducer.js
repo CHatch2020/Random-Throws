@@ -6,6 +6,7 @@ import discs from './discs.reducer';
 import courses from './courses.reducer';
 import selectedCourses from './selectedCourses.reducer';
 import holes from './holes.reducer';
+import randomDisc from './randomDisc.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   courses,
   selectedCourses,
   holes,
+  randomDisc,
 });
 
 export default rootReducer;

@@ -3,6 +3,7 @@
     color: white;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 5px;
 }
 
 .disc-name {
@@ -20,12 +21,19 @@
     width: 100px;
     margin-left: 20px;
     margin-top: 20px;
+    margin-bottom: 5px;
+    border: 2px solid black;
+    box-shadow: 0 0 6px 6px rgba(8, 162, 251, 0.692); 
 }
 
 .disc-top {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+}
+
+.disc-flight {
+    color: rgba(8, 162, 251, 0.924);
 }
 
 .flight-numbers {
@@ -36,4 +44,47 @@
     height: 60px;
     width: 140px;
     column-gap: 10px;
+}
+
+.disc-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 5px;
+}
+
+.disc-edit {
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: x-small;
+    padding: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-shadow: 0 0 6px 4px rgba(8, 162, 251, 0.692) inset;
+    width: 25%;
+}
+
+.disc-delete {
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: x-small;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 0 0 6px 4px rgba(8, 162, 251, 0.692) inset;
+    width: 25%;
+}
+
+.disc-stability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    padding-bottom: 5px;
+    color: rgba(8, 162, 251, 0.924);
 }

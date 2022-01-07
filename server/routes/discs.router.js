@@ -31,4 +31,35 @@ WHERE "user_id" = $1;
     });
 });
 
+router.post('/:id', rejectUnauthenticated, (req, res) => {
+  const sqlText = `
+  INSERT INTO "discs" ("image", "disc_name", "speed", "glide", "turn", "fade", "stability")
+  VALUES ( $1, $2, $3, $4, $5, $6, $7)
+  RETURNING "id";
+  `;
+  const sqlValues = [req.body.img, req.body.name, req.body.speed, req.body.glide, req.body.turn, req.body.fade, req.body.stability,];
+
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      console.log('New Disc Id:', dbRes.rows[0]);
+      const createdDiscId = dbRes.rows[0].id;
+
+      const sqlTextTwo = `
+      INSERT INTO "bags_discs" ("bag_id", "disc_id")
+      VALUES ( $1, $2 );
+      `;
+      const sqlValuesTwo = [req.params.id, createdDiscId];
+      pool.query(sqlTextTwo, sqlValuesTwo)
+        .then((dbRes) => {
+          res.sendStatus(201);
+        })
+        .catch((dbErr) => {
+          res.sendStatus(500);
+        })
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    })
+});
+
 module.exports = router;

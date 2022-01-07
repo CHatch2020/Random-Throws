@@ -15,6 +15,7 @@ function AddBag() {
 
     return (
         <div>
+            <h2>Add a Bag</h2>
             <input 
                 type="text"
                 placeholder="Bag Name"

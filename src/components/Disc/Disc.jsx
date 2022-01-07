@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import DiscItem from "../DiscItem/DiscItem";
+import { useHistory } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+
+import DiscItem from "../DiscItem/DiscItem";
+
 
 import "./Disc.css";
 
 function Disc() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const discs = useSelector((store) => store.discs);
   const params = useParams();
 
@@ -15,6 +19,10 @@ function Disc() {
     console.log('params', params);
     dispatch({ type: "FETCH_DISCS", payload: params.id });
   }, [params.id]);
+
+  const goToAddDisc = () => {
+    history.push(`/bags/${params.id}/add_disc`);
+  };
 
   return (
     <div>
@@ -25,8 +33,8 @@ function Disc() {
       </div>
 
       <div>
-        <div className="bags-button">
-          <button className="bags-add">Add</button>
+        <div className="disc-button">
+          <button className="disc-add" onClick={goToAddDisc}>Add</button>
         </div>
       </div>
     </div>

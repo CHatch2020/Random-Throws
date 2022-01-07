@@ -13,7 +13,7 @@ function Courses() {
     dispatch({ type: 'FETCH_COURSES'});
   }, [])
   return (
-    <div>
+    <div className="padding-bottom">
       {courses.map((course) => {
         return <CourseItem key={course.id} courseItem={course}/>
       })}

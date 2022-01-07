@@ -9,18 +9,18 @@ function Holes () {
     const params = useParams();
     const history = useHistory();
 
-    const discs = useSelector((store) => store.discs);
+    const randomDisc = useSelector((store) => store.randomDisc);
     const holes = useSelector(store => store.holes);
     const currentHole = params.hole_number;
     const currentCourse = params.course_id;
-    const randomDisc = discs.sort(() => .5 - Math.random()).slice(0,3);
     console.log("The random disc", randomDisc);
 
+    // let [randomDisc, setRandomDisc] = useState([]);
     let [score, setScore] = useState(0);
     console.log('This is the score', score);
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_DISCS', payload: params.bag_id});
+        dispatch({ type: 'FETCH_RANDOM_DISC', payload: params.bag_id});
     }, [params.bag_id]);
 
     const goToNext = () => {

@@ -13,7 +13,7 @@ function DiscItem({discItem}) {
                       <img src={discItem.image} alt={discItem.disc_name}/>
                   </div>
                   <div>
-                    Flight Numbers
+                    <p className="disc-flight">Flight Numbers</p>
                     <div className="flight-numbers">
                       <div>Speed: {discItem.speed} Glide: {discItem.glide}</div>
                       <div>Turn: {discItem.turn} Fade: {discItem.fade}</div>
@@ -21,11 +21,11 @@ function DiscItem({discItem}) {
                   </div>
                 </div>
                 <div>
-                  <div>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                  <div className="disc-buttons">
+                    <button className="disc-edit">Edit</button>
+                    <button className="disc-delete">Delete</button>
                   </div>
-                  <div>Stability: {discItem.stability}</div>
+                  <div className="disc-stability">Stability: {discItem.stability}</div>
                 </div>
               </div>
         );
