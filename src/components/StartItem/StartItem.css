@@ -1,4 +1,5 @@
-.start {
+.start-whole {
+    margin-bottom: 25px;
     background-color: white;
     box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
 }
@@ -6,7 +7,9 @@
 .start-main {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .start-sub {
@@ -24,6 +27,7 @@
     padding-left: 60px;
     padding-right: 60px;
     margin-left: 15px;
+    margin-bottom: 8px;
     border: 3px solid rgb(180, 180, 180);
     box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.322) inset;
 }
@@ -45,6 +49,7 @@
 }
 
 .start-button {
+    margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -54,4 +59,12 @@
     border: 3px solid rgb(8, 162, 251);
     background-color: black;
     color: white;
+}
+
+.drop-down {
+    background-color: rgb(8, 162, 251);
+    color: white;
+    border: 2px solid black;
+    padding: 5px;
+    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.74) inset;
 }
