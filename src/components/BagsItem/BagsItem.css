@@ -18,6 +18,7 @@
 
 .bags-inside {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(8, 162, 251);
@@ -45,4 +46,16 @@
     color: white;
     position: fixed;
     bottom: 65px;
+}
+
+.delete {
+    border: none;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-size: x-small;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 0 0 6px 4px rgba(8, 162, 251, 0.692) inset;
 }
