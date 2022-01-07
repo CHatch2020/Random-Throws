@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 
+import './Holes.css';
+
 function Holes () {
     const dispatch = useDispatch();
     const params = useParams();
@@ -30,7 +32,7 @@ function Holes () {
     }
 
     return (
-        <div>
+        <div className="holes-main">
             <p>Hole: {currentHole}</p>
             <p>Par: {holes.length && holes[currentHole - 1].par}</p>
             <p>Distance: {holes.length && holes[currentHole - 1].distance}</p>

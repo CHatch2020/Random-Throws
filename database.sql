@@ -46,6 +46,29 @@ CREATE TABLE "user_courses" (
  "course_id" INT REFERENCES "courses"
 );
 
+CREATE TABLE "selected_courses" (
+ "id" SERIAL PRIMARY KEY,
+	"course_name" VARCHAR (100) NOT NULL,
+	"description" VARCHAR (350) NOT NULL,
+	"par" INT NOT NULL,
+	"holes" INT NOT NULL
+);
+
+CREATE TABLE "holes" (
+ "id" SERIAL PRIMARY KEY,
+ "hole_number" INT NOT NULL,
+ "par" INT NOT NULL,
+ "distance" INT NOT NULL,
+ "course_id" INT REFERENCES "courses"
+);
+
+CREATE TABLE "score" (
+ "id" SERIAL PRIMARY KEY,
+ "score" INT NOT NULL,
+ "hole_id" INT REFERENCES "holes",
+ "course_id" INT REFERENCES "courses"
+);
+
 INSERT INTO "bags" ("bag_name", "user_id")
 VALUES 
 ('First', 1),
@@ -83,7 +106,34 @@ VALUES
 (1,3),
 (1,4);
 
+INSERT INTO "score" ("score", "hole_id", "course_id")
+VALUES
+();
+
+INSERT INTO "user" ("username", "password")
+VALUES
+();
+
+
+SELECT * FROM "discs"
+JOIN "bags_discs"
+ON "discs"."id"="bags_discs"."disc_id"
+JOIN "bags"
+ON "bags_discs"."bag_id"="bags"."id"
+WHERE "bags"."id" = 1;
+
 SELECT * FROM "bags"
-    WHERE "user_id" = req.user.id;
+JOIN "bags_discs"
+ON "bags"."id"="bags_discs"."bag_id"
+JOIN "discs"
+ON "bags_discs"."disc_id"="discs"."id"
+WHERE "bags"."id" = 1;
 
 SELECT * FROM "courses";
+
+SELECT * FROM "holes"
+WHERE "course_id" = 1;
+
+
+SELECT * FROM "bags"
+    WHERE "user_id" = req.user.id;
