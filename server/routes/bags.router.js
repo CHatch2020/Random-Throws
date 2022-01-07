@@ -43,4 +43,19 @@ WHERE "user_id" = $1 AND "bags"."id" = $2;
     });
 });
 
+router.post('/', rejectUnauthenticated, (req, res) => {
+  const sqlText = `
+  INSERT INTO "bags" ("bag_name", "user_id")
+  VALUES ( $1, $2 );
+  `;
+  const sqlValues = [req.body.name, req.user.id];
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    })
+});
+
 module.exports = router;

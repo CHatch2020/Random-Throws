@@ -20,6 +20,8 @@ import Bags from "../Bags/Bags";
 import Disc from "../Disc/Disc";
 import Holes from "../Holes/Holes";
 
+import Addbag from "../AddBag/AddBag";
+
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
@@ -69,6 +71,14 @@ function App() {
             path="/bags"
           >
             <Bags />
+          </ProtectedRoute>
+
+          <ProtectedRoute 
+            // logged in shows Bags Page else shows Login Page
+            exact 
+            path="/add_bags"
+          >
+            <Addbag />
           </ProtectedRoute>
 
           <ProtectedRoute
