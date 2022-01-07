@@ -10,6 +10,7 @@ function AddBag() {
 
     const addBag = () => {
         dispatch({ type: 'ADD_BAG', payload: {name}});
+        history.push('/bags');
     }
 
     return (

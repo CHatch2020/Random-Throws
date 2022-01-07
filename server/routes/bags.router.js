@@ -58,4 +58,21 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     })
 });
 
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  console.log(req.params);
+  
+  const sqlText = `
+  DELETE FROM "bags"
+  WHERE "id" = $1;
+  `;
+  const sqlValues = [req.params.id];
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    })
+});
+
 module.exports = router;
