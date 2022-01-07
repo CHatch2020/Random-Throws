@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import DiscItem from "../DiscItem/DiscItem";
-
 
 import "./Disc.css";
 
@@ -16,7 +15,7 @@ function Disc() {
   const params = useParams();
 
   useEffect(() => {
-    console.log('params', params);
+    console.log("params", params);
     dispatch({ type: "FETCH_DISCS", payload: params.id });
   }, [params.id]);
 
@@ -25,7 +24,7 @@ function Disc() {
   };
 
   return (
-    <div>
+    <div className="disc-padding-bottom">
       <div className="back">
         {discs.map((disc) => {
           return <DiscItem key={disc.id} discItem={disc} />;
@@ -34,7 +33,9 @@ function Disc() {
 
       <div>
         <div className="disc-button">
-          <button className="disc-add" onClick={goToAddDisc}>Add</button>
+          <button className="disc-add" onClick={goToAddDisc}>
+            Add
+          </button>
         </div>
       </div>
     </div>

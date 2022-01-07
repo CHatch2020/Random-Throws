@@ -36,6 +36,9 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: "FETCH_USER" });
+    dispatch({ type: "FETCH_BAGS" });
+    dispatch({ type: "FETCH_COURSES" });
+    dispatch({ type: "FETCH_SELECTED_COURSES" });
   }, [dispatch]);
 
   return (

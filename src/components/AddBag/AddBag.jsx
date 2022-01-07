@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 function AddBag() {
-    const dispatch = useDispatch();
-    const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-    const [name, setName] = useState([]);
+  const [name, setName] = useState([]);
 
-    const addBag = () => {
-        dispatch({ type: 'ADD_BAG', payload: {name}});
-        history.push('/bags');
-    }
+  const addBag = () => {
+    dispatch({ type: "ADD_BAG", payload: { name } });
+    history.push("/bags");
+  };
 
-    return (
-        <div>
-            <h2>Add a Bag</h2>
-            <input 
-                type="text"
-                placeholder="Bag Name"
-                onChange={(e) => setName(e.target.value)}/>
-            <button onClick={addBag}>Add</button>
-        </div>
-    )
-};
+  return (
+    <div>
+      <h2>Add a Bag</h2>
+      <input
+        type="text"
+        placeholder="Bag Name"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={addBag}>Add</button>
+    </div>
+  );
+}
 
 export default AddBag;

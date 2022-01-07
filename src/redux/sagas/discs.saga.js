@@ -34,7 +34,7 @@ function* addDisc(action) {
     try {
         console.log(action);
         yield axios.post(`/api/discs/${action.payload.bagId}`, action.payload);
-        yield put({ type: 'FETCH_DISCS'});
+        yield put({ type: 'FETCH_DISCS' });
     } catch(err) {
         console.log('Error in addBags Saga', err);
         

@@ -22,6 +22,10 @@ Container
   padding-bottom: 56px;
 }
 
+.disc-padding-bottom {
+  padding-bottom: 85px;
+}
+
 .container {
   padding: 20px;
 }
