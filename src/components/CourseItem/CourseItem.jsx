@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 
+import './CourseItem.css';
+
 function CourseItem({courseItem}) {
   const dispatch = useDispatch();
 
@@ -17,8 +19,10 @@ function CourseItem({courseItem}) {
             {/* break off again to align these components together */}
             <div className="course-main">
               <h3 className="course-name">{courseItem.course_name}</h3>
-              <h4 className="course-desc">Description:</h4>
-              <p>{courseItem.description}</p>
+              <div className="course-desc-sect">
+                <h4 className="course-desc-name">Description:</h4>
+                <p className="course-desc">{courseItem.description}</p>
+              </div>
             </div>
     
             {/* Leave this one out */}
