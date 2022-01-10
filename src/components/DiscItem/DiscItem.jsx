@@ -1,9 +1,25 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./DiscItem.css";
 
 function DiscItem({ discItem }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const params = useParams();
+
+  const bagId = params.id;
+  const discId = discItem.disc_id;
+  console.log(bagId);
+
+  const deleteDisc = () => {
+    dispatch({ type: 'DELETE_DISC', payload: {discId, bagId }});
+  };
+
+
+
   return (
     <div className="disc-main">
       <div className="disc-name">{discItem.disc_name}</div>
@@ -25,8 +41,8 @@ function DiscItem({ discItem }) {
       </div>
       <div>
         <div className="disc-buttons">
-          <button className="disc-edit">Edit</button>
-          <button className="disc-delete">Delete</button>
+          <button className="disc-edit" onClick={() => history.push(`/bags/${bagId}/edit/${discId}`)}>Edit</button>
+          <button className="disc-delete" onClick={deleteDisc}>Delete</button>
         </div>
         <div className="disc-stability">Stability: {discItem.stability}</div>
       </div>

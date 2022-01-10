@@ -31,6 +31,22 @@ WHERE "user_id" = $1;
     });
 });
 
+router.get("/:id", rejectUnauthenticated, (req, res) => {
+  const sqlText = `
+  SELECT * FROM "discs"
+WHERE "id" = $1;
+    `;
+  const sqlValues = [req.params.id];
+  pool
+    .query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.send(dbRes.rows[0]);
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    });
+});
+
 router.post('/:id', rejectUnauthenticated, (req, res) => {
   const sqlText = `
   INSERT INTO "discs" ("image", "disc_name", "speed", "glide", "turn", "fade", "stability")
@@ -56,6 +72,54 @@ router.post('/:id', rejectUnauthenticated, (req, res) => {
         .catch((dbErr) => {
           res.sendStatus(500);
         })
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    })
+});
+
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  console.log('The params', req.params);
+  
+  const sqlText = `
+  DELETE FROM "discs"
+  WHERE "id" = $1;
+  `;
+  const sqlValues = [req.params.id];
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(201);
+    })
+    .catch((dbErr) => {
+      res.sendStatus(500);
+    })
+});
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  const sqlText = `
+  UPDATE "discs"
+  SET
+    "disc_name" = $1,
+    "speed" = $2,
+    "glide" = $3,
+    "turn" = $4,
+    "fade" = $5,
+    "stability" = $6
+  WHERE "id" = $7;
+  `;
+
+  const sqlValues = [
+    req.body.disc_name,
+    req.body.speed,
+    req.body.glide,
+    req.body.turn,
+    req.body.fade,
+    req.body.stability,
+    req.params.id
+  ];
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(201);
     })
     .catch((dbErr) => {
       res.sendStatus(500);

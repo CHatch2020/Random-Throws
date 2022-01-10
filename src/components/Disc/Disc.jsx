@@ -14,10 +14,13 @@ function Disc() {
   const discs = useSelector((store) => store.discs);
   const params = useParams();
 
+  const bagId = Number(params.id);
+  console.log(bagId);
+
   useEffect(() => {
     console.log("params", params);
-    dispatch({ type: "FETCH_DISCS", payload: params.id });
-  }, [params.id]);
+    dispatch({ type: "FETCH_DISCS", payload: bagId });
+  }, [bagId]);
 
   const goToAddDisc = () => {
     history.push(`/bags/${params.id}/add_disc`);

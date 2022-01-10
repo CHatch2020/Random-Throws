@@ -28,15 +28,42 @@ function* fetchRandomDiscs (action) {
         console.log('Error in fetchRandomDiscs Saga', err);
         
     }
+};
+
+function* fetchOneDisc(action) {
+    try {
+        const response = yield axios({
+            method: 'GET',
+            url:    `/api/discs/${action.payload}`
+        })
+        console.log('Fetch a student', response.data);
+        yield put({
+            type: 'SET_DISC_TO_EDIT',
+            payload: response.data
+        })
+    } catch(err) {
+        console.log('Error in fetch One Disc Saga', err);
+        
+    }
 }
 
 function* addDisc(action) {
     try {
         console.log(action);
         yield axios.post(`/api/discs/${action.payload.bagId}`, action.payload);
-        yield put({ type: 'FETCH_DISCS' });
+        yield put({ type: 'FETCH_DISCS', payload: action.payload.bagId });
     } catch(err) {
         console.log('Error in addBags Saga', err);
+        
+    }
+};
+
+function* deleteDisc(action) {
+    try {
+        yield axios.delete(`/api/discs/${action.payload.discId}`);
+        yield put({ type: 'FETCH_DISCS', payload: action.payload.bagId })
+    } catch(err) {
+        console.log('Error in delete Saga', err);
         
     }
 }
@@ -45,6 +72,8 @@ function* discSaga() {
     yield takeEvery('FETCH_DISCS', fetchDiscs);
     yield takeEvery('ADD_DISC', addDisc);
     yield takeEvery('FETCH_RANDOM_DISC', fetchRandomDiscs);
+    yield takeEvery('DELETE_DISC', deleteDisc);
+    yield takeEvery('FETCH_ONE_DISC', fetchOneDisc);
 };
 
 export default discSaga;
