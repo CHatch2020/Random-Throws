@@ -20,6 +20,9 @@ function Disc() {
   useEffect(() => {
     console.log("params", params);
     dispatch({ type: "FETCH_DISCS", payload: bagId });
+    return (
+      dispatch({ type: 'CLEAR_DISCS' })
+    )
   }, [bagId]);
 
   const goToAddDisc = () => {
@@ -30,7 +33,7 @@ function Disc() {
     <div className="disc-padding-bottom">
       <div className="back">
         {discs.map((disc) => {
-          return <DiscItem key={disc.id} discItem={disc} />;
+          return <DiscItem key={disc.disc_id} discItem={disc} />;
         })}
       </div>
 
