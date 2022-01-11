@@ -37,6 +37,7 @@ function* addCourse(action) {
     try {
         yield axios.post('/api/courses', action.payload);
         //yield put sage that is calling back selected courses
+        yield put({ type: 'FETCH_SELECTED_COURSES' });
     } catch(err) {
         console.log('Error in addCourse Saga');
         

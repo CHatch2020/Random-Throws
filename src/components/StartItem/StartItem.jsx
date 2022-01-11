@@ -17,10 +17,10 @@ function StartItem({ courseItem }) {
   useEffect(() => {
     dispatch({ type: "FETCH_BAGS" });
   }, []);
-  console.log(bags);
+  // console.log(bags);
 
   const toHoles = (courseItem) => {
-    dispatch({ type: "FETCH_HOLES", payload: courseItem.id });
+    dispatch({ type: "FETCH_HOLES", payload: courseItem.course_id });
     history.push(`/start/${courseItem.id}/bags/${bag_id}/holes/1`);
   };
 

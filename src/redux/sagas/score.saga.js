@@ -15,8 +15,25 @@ function* sendScore(action) {
     }
 };
 
+function* fetchScores(action) {
+    try {
+        const response = yield axios({
+            method: 'GET',
+            url: `/api/score/${action.payload}`
+        })
+        yield put({
+            type: 'SET_SCORES',
+            payload: response.data
+        })
+    } catch(err) {
+        console.log('Error in fetchScores Saga', err);
+        
+    }
+}
+
 function* scoreSaga() {
     yield takeEvery('SEND_SCORE', sendScore);
+    yield takeEvery('FETCH_SCORES', fetchScores);
 };
 
 export default scoreSaga;

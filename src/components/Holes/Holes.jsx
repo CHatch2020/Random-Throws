@@ -38,7 +38,13 @@ function Holes() {
     randomDisc;
   };
 
-  
+  const endRound = () => {
+    dispatch({
+      type: "SEND_SCORE",
+      payload: { score, currentHole, currentCourse },
+    });
+    history.push(`/start/${currentCourse}/recap`);
+  }
 
   return (
     <div className="padding-bottom">
@@ -56,6 +62,7 @@ function Holes() {
           />
           <button>Next</button>
         </form>
+        { Number(currentHole) === holes.length ? <button onClick={endRound}>End Round</button> : null}
       </div>
     </div>
   );

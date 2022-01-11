@@ -21,11 +21,11 @@ router.get('/', rejectUnauthenticated, (req,res) => {
 router.post('/', rejectUnauthenticated, (req,res) => {
     console.log(req.body);
     const sqlTextMain = `
-    INSERT INTO "selected_courses" ("course_name", "description", "par", "holes")
-    VALUES ($1, $2, $3, $4)
+    INSERT INTO "selected_courses" ("course_name", "description", "par", "holes", "course_id")
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING "id";
     `;
-    const sqlValues = [req.body.course_name, req.body.description, req.body.par, req.body.holes];
+    const sqlValues = [req.body.course_name, req.body.description, req.body.par, req.body.holes, req.body.id];
     pool.query(sqlTextMain, sqlValues)
         .then((dbRes) => {
             console.log('New Course Id:', dbRes.rows[0].id);
@@ -35,7 +35,7 @@ router.post('/', rejectUnauthenticated, (req,res) => {
             INSERT INTO "user_courses" ("user_id", "course_id")
             VALUES ($1, $2);
             `;
-            const sqlValuesTwo = [createdCourseId, req.user.id];
+            const sqlValuesTwo = [req.user.id, createdCourseId];
             pool.query(sqlTextTwo, sqlValuesTwo)
                 .then((dbRes) => {
                     res.sendStatus(201);
