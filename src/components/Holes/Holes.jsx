@@ -38,6 +38,8 @@ function Holes() {
     randomDisc;
   };
 
+  
+
   return (
     <div className="padding-bottom">
       <div className="holes-main">
@@ -47,11 +49,13 @@ function Holes() {
         {randomDisc.map((disc) => {
           return <h4>{disc.disc_name}</h4>;
         })}
-        <input
-          placeholder="Score"
-          onChange={(e) => setScore(Number(e.target.value))}
-        />
-        <button onClick={() => goToNext()}>Next</button>
+        <form onSubmit={goToNext}>
+          <input
+            placeholder="Score"
+            onChange={(e) => setScore(Number(e.target.value))}
+          />
+          <button>Next</button>
+        </form>
       </div>
     </div>
   );
