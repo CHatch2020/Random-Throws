@@ -1,0 +1,61 @@
+.title {
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid rgba(8, 162, 251, 0.692);
+    padding-bottom: 20px;
+}
+
+input {
+    color: white;
+    background-color: rgba(8, 162, 251, 0.692);
+    border-color: white;
+    text-align: center;
+}
+
+.text-input {
+    width: 70%;
+    height: 50px;
+    font-size: x-large;
+}
+
+.number-input {
+    width: 13%;
+    height: 50px;
+    font-size: x-large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 10px;
+    margin-top: 10%;
+}
+
+.edit-update {
+    margin-right: 15px;
+    height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
+    border: 3px solid rgb(8, 162, 251);
+    background-color: black;
+    color: white;
+}
+
+.edit-cancel {
+    margin-right: 15px;
+    height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
+    border: 3px solid rgb(8, 162, 251);
+    background-color: black;
+    color: white;
+}
