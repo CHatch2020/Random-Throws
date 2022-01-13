@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
+import './AddDisc.css';
+
 function AddDisc() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -29,44 +31,51 @@ function AddDisc() {
 
   return (
     <div>
-      <h2>Add a Disc</h2>
+      <h2 className="addDisc-title">Add a Disc</h2>
       <form onSubmit={addDisc}>
         <input
+          className="addDisc-text"
           type="text"
           placeholder="Image"
           onChange={(e) => setImg(e.target.value)}
         />
         <input
+          className="addDisc-text"
           type="text"
           placeholder="Disc Name"
           onChange={(e) => setName(e.target.value)}
         />
         <input
+          className="addDisc-num"
           type="number"
           placeholder="Speed"
           onChange={(e) => setSpeed(e.target.value)}
         />
         <input
+          className="addDisc-num"
           type="number"
           placeholder="Glide"
           onChange={(e) => setGlide(e.target.value)}
         />
         <input
+          className="addDisc-num"
           type="number"
           placeholder="Turn"
           onChange={(e) => setTurn(e.target.value)}
         />
         <input
+          className="addDisc-num"
           type="number"
           placeholder="Fade"
           onChange={(e) => setFade(e.target.value)}
         />
         <input
+          className="addDisc-text"
           type="text"
           placeholder="Stability"
           onChange={(e) => setStability(e.target.value)}
         />
-        <button>Add</button>
+        <button className="addDisc-button">Add</button>
       </form>
     </div>
   );

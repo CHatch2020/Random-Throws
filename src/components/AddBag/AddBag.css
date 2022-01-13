@@ -1,58 +1,41 @@
-.title {
+.addbag-title {
     text-align: center;
     color: white;
     border-bottom: 4px solid rgba(8, 162, 251, 0.692);
     padding-bottom: 20px;
 }
 
-.text-input {
+.addbag-name {
+    color: white;
     width: 70%;
     height: 50px;
     font-size: x-large;
-    color: white;
     background-color: rgba(8, 162, 251, 0.692);
     border-color: white;
     text-align: center;
 }
 
-.number-input {
-    width: 13%;
-    height: 50px;
-    font-size: x-large;
+.addbag-name::placeholder {
     color: white;
-    background-color: rgba(8, 162, 251, 0.692);
-    border-color: white;
-    text-align: center;
 }
 
-form {
+.addbag-main {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+.addbag-but {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: row-reverse;
-    column-gap: 10px;
-    margin-top: 10%;
-}
-
-.edit-update {
+.addbag-button {
     margin-right: 15px;
-    height: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
-    border: 3px solid rgb(8, 162, 251);
-    background-color: black;
-    color: white;
-}
-
-.edit-cancel {
-    margin-right: 15px;
-    height: 30px;
+    height: 60px;
     padding-left: 30px;
     padding-right: 30px;
     box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
