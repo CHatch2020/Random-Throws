@@ -1,6 +1,6 @@
 .start-whole {
     margin-bottom: 25px;
-    background-color: white;
+    background-color: rgb(27, 27, 27);
     box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
 }
 
@@ -21,26 +21,29 @@
 }
 
 .start-name {
-    background-color: black;
-    color: white;
+    background-color: gray;
+    color: black;
     padding: 15px;
     padding-left: 60px;
     padding-right: 60px;
     margin-left: 15px;
     margin-bottom: 8px;
     border: 3px solid rgb(180, 180, 180);
-    box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.322) inset;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 6px rgba(73, 73, 73, 0.438) inset;
 }
 
 .start-holes {
     margin: 5px;
     margin-bottom: 0;
+    color: white;
 }
 
 .start-par {
     margin: 5px;
     margin-top: 0;
     padding-left: 18px;
+    color: white;
 }
 
 .button-body {
@@ -55,8 +58,9 @@
     padding-bottom: 5px;
     padding-left: 40px;
     padding-right: 40px;
-    box-shadow: 3px 3px 3px 1px rgba(2, 2, 2, 0.479);
+    box-shadow: 3px 3px 9px 1px rgba(253, 253, 253, 0.479);
     border: 3px solid rgb(8, 162, 251);
+    border-radius: 10px;
     background-color: black;
     color: white;
 }
@@ -65,6 +69,7 @@
     background-color: rgb(8, 162, 251);
     color: white;
     border: 2px solid black;
+    border-radius: 10px;
     padding: 5px;
-    box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.74) inset;
+    box-shadow: 0px 0px 10px .5px rgba(255, 255, 255, 0.74);
 }

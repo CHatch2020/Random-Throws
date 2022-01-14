@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Header.css"
 
+
+// if  (location.pathname === /bags)
 function Header() {
     const user = useSelector(store => store.user);
   return (

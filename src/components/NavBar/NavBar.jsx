@@ -11,6 +11,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import BackpackIcon from '@mui/icons-material/Backpack';
 
 import { styled } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
 
 // quick style for the navBar
 const StyledBottomNav = styled(BottomNavigation)`
@@ -34,7 +35,7 @@ export default function NavBar() {
       <BottomNavigationAction
         label="Home"
         value="home"
-        icon={<HomeIcon />}
+        icon={<HomeIcon sx={{ color: grey[50] }}/>}
         className="icons"
       />
       </Link>
@@ -44,7 +45,7 @@ export default function NavBar() {
       <BottomNavigationAction
         label="Play"
         value="play"
-        icon={<PlayCircleFilledWhiteIcon />}
+        icon={<PlayCircleFilledWhiteIcon sx={{ color: grey[50] }}/>}
         className="icons"
       />
       </Link>
@@ -54,7 +55,7 @@ export default function NavBar() {
       <BottomNavigationAction
         label="Courses"
         value="courses"
-        icon={<LocationOnIcon />}
+        icon={<LocationOnIcon sx={{ color: grey[50] }}/>}
         className="icons"
       />
       </Link>
@@ -64,7 +65,7 @@ export default function NavBar() {
       <BottomNavigationAction 
         label="Bags" 
         value="bags" 
-        icon={<BackpackIcon />}
+        icon={<BackpackIcon sx={{ color: grey[50] }}/>}
         className="icons" 
       />
       </Link>

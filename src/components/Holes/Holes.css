@@ -3,10 +3,11 @@
     margin-bottom: 25px;
     box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
     height: 630px;
+    border-radius: 10px;
 }
 
 .holes-sub {
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     margin: 5px;
     height: 630px;
     color: white;
@@ -32,6 +33,7 @@
 
 .holes-outside-input {
     background-color: white;
+    border-radius: 10px;
 }
 
 .holes-input {
@@ -40,10 +42,11 @@
     background-color: black;
     margin: 3px;
     border: 8px solid rgba(8, 162, 251);
-    text-align: center;
+    border-radius: 10px;
     color: white;
     font-size: xx-large;
     box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.397) inset;
+    text-align: center;
 }
 
 .holes-next {
@@ -53,8 +56,10 @@
     padding-left: 30px;
     padding-right: 30px;
     border: 3px solid rgb(8, 162, 251);
+    border-radius: 10px;
     background-color: black;
     color: white;
+    box-shadow: 3px 3px 9px 1px rgba(253, 253, 253, 0.479);
 }
 
 .holes-end {
@@ -64,7 +69,9 @@
     padding-left: 30px;
     padding-right: 30px;
     border: 3px solid rgb(8, 162, 251);
+    border-radius: 10px;
     background-color: black;
     color: white;
+    box-shadow: 3px 3px 9px 1px rgba(253, 253, 253, 0.479);
     text-align: center;
 }

@@ -3,7 +3,8 @@
     flex-direction: column-reverse;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: rgb(27, 27, 27);
+    color: white;
     margin-left: 10px;
     margin-right: 10px;
     height: 590px;

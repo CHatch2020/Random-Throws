@@ -3,14 +3,16 @@
     margin-bottom: 25px;
     box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
     height: 630px;
+    border-radius: 10px;
 }
 
 .recap-sub {
-    background-color: black;
+    background-color: rgb(27, 27, 27);
     margin: 5px;
     height: 630px;
     color: white;
     font-size: x-large;
+    border-radius: 10px;
 }
 
 .recap-table {
