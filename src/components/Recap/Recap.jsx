@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
+import "./Recap.css";
+
 function Recap() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -16,25 +18,27 @@ function Recap() {
   }, [params.course_id]);
 
   return (
-    <div>
-      <table>
-        <tbody>
-          <thead>
+    <div className="recap-main">
+      <div className="recap-sub">
+        <table className="recap-table">
+          <thead className="recap-head">
             <tr>
-              <td>Score</td>
-              <td>Hole</td>
+              <th>Score</th>
+              <th>Hole</th>
             </tr>
           </thead>
-          {scores.map((score) => {
-            return (
-              <tr>
-                <td>{score.score}</td>
-                <td>{score.hole_id}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          <tbody className="recap-body">
+            {scores.map((score) => {
+              return (
+                <tr className="recap-rows">
+                  <td>{score.score}</td>
+                  <td>{score.hole_id}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

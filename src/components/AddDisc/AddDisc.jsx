@@ -26,7 +26,7 @@ function AddDisc() {
       type: "ADD_DISC",
       payload: { img, name, speed, glide, turn, fade, stability, bagId },
     });
-    history.push("/bags/:id");
+    history.push(`/bags/${bagId}`);
   };
 
   return (

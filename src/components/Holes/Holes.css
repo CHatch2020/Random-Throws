@@ -1,3 +1,70 @@
 .holes-main {
     background-color: white;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px 5px rgba(8, 162, 251, 0.603);
+    height: 630px;
+}
+
+.holes-sub {
+    background-color: black;
+    margin: 5px;
+    height: 630px;
+    color: white;
+    font-size: x-large;
+}
+
+.randomDisc {
+    color: rgba(8, 162, 251);
+    padding: 0;
+}
+
+.holes-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid rgba(8, 162, 251, 0.692);
+}
+
+.holes-discs {
+    text-align: center;
+}
+
+.holes-outside-input {
+    background-color: white;
+}
+
+.holes-input {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    margin: 3px;
+    border: 8px solid rgba(8, 162, 251);
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+    box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.397) inset;
+}
+
+.holes-next {
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 3px solid rgb(8, 162, 251);
+    background-color: black;
+    color: white;
+}
+
+.holes-end {
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 3px solid rgb(8, 162, 251);
+    background-color: black;
+    color: white;
+    text-align: center;
 }

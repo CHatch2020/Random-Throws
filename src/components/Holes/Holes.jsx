@@ -44,25 +44,38 @@ function Holes() {
       payload: { score, currentHole, currentCourse },
     });
     history.push(`/start/${currentCourse}/recap`);
-  }
+  };
 
   return (
-    <div className="padding-bottom">
-      <div className="holes-main">
-        <p>Hole: {currentHole}</p>
-        <p>Par: {holes.length && holes[currentHole - 1].par}</p>
-        <p>Distance: {holes.length && holes[currentHole - 1].distance}</p>
-        {randomDisc.map((disc) => {
-          return <h4>{disc.disc_name}</h4>;
-        })}
+    <div className="holes-main">
+      <div className="holes-sub">
+        <div className="holes-data">
+          <p>Hole: {currentHole}</p>
+          <p>Par: {holes.length && holes[currentHole - 1].par}</p>
+          <p>Distance: {holes.length && holes[currentHole - 1].distance}</p>
+        </div>
+        <div className="holes-discs">
+          {randomDisc.map((disc) => {
+            return <h4 className="randomDisc">{disc.disc_name}</h4>;
+          })}
+        </div>
         <form onSubmit={goToNext}>
-          <input
-            placeholder="Score"
-            onChange={(e) => setScore(Number(e.target.value))}
-          />
-          <button>Next</button>
+          <div className="holes-outside-input">
+            <input
+              className="holes-input"
+              placeholder="Score"
+              onChange={(e) => setScore(Number(e.target.value))}
+            />
+          </div>
+          {Number(currentHole) < holes.length ? (
+            <button className="holes-next">Next</button>
+          ) : null}
+          {Number(currentHole) === holes.length ? (
+            <button className="holes-end" onClick={endRound}>
+              End Round
+            </button>
+          ) : null}
         </form>
-        { Number(currentHole) === holes.length ? <button onClick={endRound}>End Round</button> : null}
       </div>
     </div>
   );
