@@ -26,5 +26,6 @@
     position: fixed;
     bottom: 65px;
     box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.527);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 

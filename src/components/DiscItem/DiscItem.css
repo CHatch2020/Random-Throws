@@ -4,6 +4,7 @@
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .disc-name {
@@ -60,6 +61,7 @@
     background-color: black;
     color: white;
     font-size: x-small;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
     padding-left: 14px;
     padding-right: 14px;
@@ -73,6 +75,7 @@
     background-color: black;
     color: white;
     font-size: x-small;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 5px;
     padding-left: 8px;
     padding-right: 8px;

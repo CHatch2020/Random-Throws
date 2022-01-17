@@ -11,9 +11,10 @@ function UserPage() {
     <div className="body">
       <h2>Welcome, {user.username}!</h2>
       {/* Allow user to upload a profile picture */}
-      <UploadButtons />
+      {/* <UploadButtons /> */}
       {/* intro */}
-      <p>Select your profile Picture!</p>
+      {/* <p>Select your profile Picture!</p> */}
+      <p className="home-text">R</p>
       <h3 className="intro">You will get three random discs per hole! Goodluck and have fun!</h3>
     </div>
   );
