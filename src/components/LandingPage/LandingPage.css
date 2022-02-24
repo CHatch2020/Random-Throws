@@ -7,7 +7,7 @@ Grid
   display: flex;
   flex: 0 1 auto;
   /* defaults to 'row' */
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   /* defaults to 'flex-start' */
   justify-content: center;

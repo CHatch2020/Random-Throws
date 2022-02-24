@@ -8,11 +8,13 @@
 }
 
 .bags-outside {
-    background-color: rgb(27, 27, 27);
-    width: 120px;
-    height: 120px;
+    background-color: rgb(104, 189, 238);
+    width: 140px;
+    height: 140px;
+    border-radius: 90%;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-shadow: 0 0 15px 2px rgba(24, 24, 24, 0.411) inset;
     box-shadow: 0 0 15px 2px rgba(8, 162, 251, 0.603);
 }
@@ -28,6 +30,10 @@
     border-radius: 90%;
     box-shadow: 0 0 20px 4px rgba(24, 24, 24, 0.527) inset;
     font-size: x-large;
+}
+
+.bag-name {
+    color: white;
 }
 
 .bags-button {

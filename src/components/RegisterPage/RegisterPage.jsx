@@ -1,26 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import { useHistory } from 'react-router-dom';
-import RegisterForm from '../RegisterForm/RegisterForm';
+import { useHistory } from "react-router-dom";
+import RegisterForm from "../RegisterForm/RegisterForm";
 
 function RegisterPage() {
   const history = useHistory();
 
   return (
-    <div>
-      <RegisterForm />
+    <div className="container">
+      <div className="grid">
+        <RegisterForm />
 
-      <center>
-        <button
-          type="button"
-          className="btn btn_asLink"
-          onClick={() => {
-            history.push('/login');
-          }}
-        >
-          Login
-        </button>
-      </center>
+        <center>
+          <button
+            type="button"
+            className="login-subtext"
+            onClick={() => {
+              history.push("/login");
+            }}
+          >
+            Login
+          </button>
+        </center>
+      </div>
     </div>
   );
 }
