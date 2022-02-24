@@ -1,0 +1,46 @@
+.Landing-Register {
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+    padding: 25px;
+    margin: 0 auto 20px;
+    background-color: #efefef;
+    border-radius: 40px;
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.274);
+  }
+
+  .landing-username {
+      position: relative;
+      padding-left: 6%;
+      right: 30%;
+      width: 147%;
+      height: 25px;
+      border: none;
+      border-radius: 80px;
+      box-shadow: -2px 4px 10px 1px rgba(20, 20, 20, 0.342);
+  }
+
+  .landing-password {
+    position: relative;
+    padding-left: 6%;
+    right: 30%;
+    width: 147%;
+    height: 25px;
+    border: none;
+    border-radius: 80px;
+    box-shadow: -2px 4px 10px 1px rgba(20, 20, 20, 0.342);
+  }
+
+  .landing-button {
+      position: relative;
+      right: 20%;
+      width: 130%;
+      height: 50px;
+      margin-top: 30%;
+      border: none;
+      border-radius: 15px;
+      font-size: large;
+      color: white;
+      background-color: rgb(8, 162, 251);
+      box-shadow: -2px 4px 10px 1px rgba(20, 20, 20, 0.5) inset;
+  }
