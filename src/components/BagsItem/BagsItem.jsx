@@ -20,7 +20,7 @@ function BagsItem({ bagItem }) {
     <div>
       <div className="bags-outside" key={bagItem.id}>
         <div className="bags-inside">
-          <p onClick={() => toDiscs(bagItem)}>{bagItem.bag_name}</p>
+          <p className="bag-name" onClick={() => toDiscs(bagItem)}>{bagItem.bag_name}</p>
           <button className="delete" onClick={handleDelete}>
             Delete
           </button>
