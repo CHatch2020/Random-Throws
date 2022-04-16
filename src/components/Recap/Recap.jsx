@@ -12,6 +12,8 @@ function Recap() {
   const params = useParams();
 
   const scores = useSelector((store) => store.scores);
+  const courses = useSelector((store) => store.courses);
+  const currentCourse = params.course_id;
 
   useEffect(() => {
     dispatch({ type: "FETCH_SCORES", payload: params.course_id });
@@ -37,6 +39,10 @@ function Recap() {
               );
             })}
           </tbody>
+          <div>
+            <h3>Total: {currentCourse.par}</h3>
+            <h3>Your Score: </h3>
+          </div>
         </table>
       </div>
     </div>

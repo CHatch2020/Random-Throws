@@ -55,9 +55,12 @@ function Holes() {
           <p>Distance: {holes.length && holes[currentHole - 1].distance}</p>
         </div>
         <div className="holes-discs">
+          <p>Discs for this hole</p>
+          <ol>
           {randomDisc.map((disc) => {
-            return <h4 className="randomDisc">{disc.disc_name}</h4>;
+            return <li className="randomDisc">{disc.disc_name}</li>;
           })}
+          </ol>
         </div>
         <form onSubmit={goToNext}>
           <div className="holes-outside-input">

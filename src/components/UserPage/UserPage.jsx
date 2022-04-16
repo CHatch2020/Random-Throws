@@ -14,7 +14,7 @@ function UserPage() {
       {/* <UploadButtons /> */}
       {/* intro */}
       {/* <p>Select your profile Picture!</p> */}
-      <p className="home-text">R</p>
+      <img src="images/Rmedium-1.png" alt="Logo" />
       <h3 className="intro">You will get three random discs per hole! Goodluck and have fun!</h3>
     </div>
   );
